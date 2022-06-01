@@ -270,8 +270,8 @@ namespace es
                 scatteredPositions[1, i] = random.NextDouble() * 6 - 3;
                 scatteredValues[0, i] = myFunc(scatteredPositions[0, i], scatteredPositions[1, i]);
             }
-            Kriging(scatteredValues, scatteredPositions, -3, 3, 0.1f);
-          //  var cc = Kriging(scatteredValues, scatteredPositions, new PointF(0.13f, 1.2f), 5);
+          //  Kriging(scatteredValues, scatteredPositions, -3, 3, 0.1f);
+           var cc = Kriging(scatteredValues, scatteredPositions, new PointF(0.132f, 1.2f), 5);
         }
     }
 

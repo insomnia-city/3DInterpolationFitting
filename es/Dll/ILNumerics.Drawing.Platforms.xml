@@ -1,0 +1,571 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ILNumerics.Drawing.Platforms</name>
+    </assembly>
+    <members>
+        <member name="F:ILNumerics.Drawing.ControlBridge.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.ControlBridge.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.ControlBridge.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.GDIControl.Clock">
+            <summary>
+            Gets the clock which provides the time base for animations
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.GDIControl.Timeout">
+            <summary>
+            Time after which rendering is cancelled if not completed. Default: 0 (no limit)
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.GDIControl.GetCurrentScene(System.Int64)">
+            <summary>
+            Return a scene which reflects the rendering result, including all local compositions and modifications
+            </summary>
+            <param name="ms">[optional] time of render frame</param>
+            <returns>scene composition as copies of local and global scene with user interaction</returns>
+        </member>
+        <member name="F:ILNumerics.Drawing.GDIControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.GDIControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.GDIControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLControl.Clock">
+            <summary>
+            Gets the clock which provides the time base for animations
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLControl.Timeout">
+            <summary>
+            Time after which rendering is cancelled when not completed. (Not supported for OpenGL renderer)
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLControl.GetCurrentScene(System.Int64)">
+            <summary>
+            Return a scene which reflects the rendering result, including all local compositions and modifications
+            </summary>
+            <param name="ms">[optional] time of render frame</param>
+            <returns>scene composition as copies of local and global scene with user interaction</returns>
+        </member>
+        <member name="T:ILNumerics.Drawing.Panel">
+            <summary>
+            The main Windows.Forms rendering panel in ILNumerics, supports various drivers
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.Panel.FPSChanged">
+            <summary>
+            Fires when the number of rendered frames per second changes
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.Panel.BeginRenderFrame">
+            <summary>
+            Fires when the rendering of a frame was started
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.Panel.EndRenderFrame">
+            <summary>
+            Fires when the rendering of a frame was finished
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.Panel.RenderingFailed">
+            <summary>
+            Fires when the rendering of a frame failed
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.IsDesignMode">
+            <summary>
+            Replacement for Control.DesignMode which also works in the constructor of this control
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Clock">
+            <summary>
+            The clock providing the frequency / current time for the scene
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.ShowUIControls">
+            <summary>
+            [Reserved for future use] Determines if extended interactive UI controls are shown at runtime
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Editor">
+            <summary>
+            [Reserved for future use]
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.FPS">
+            <summary>
+            Gets the current frame rate (frames per second) when the clock is running
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Timeout">
+            <summary>
+            Time after which rendering is cancelled if not completed. Default: 0 (no limit)
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.BackColor">
+            <summary>
+            Get the back color of the control or sets it
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Camera">
+            <summary>
+            Get a reference to the default camera of the scene
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.Render(System.Int64)">
+            <summary>
+            Trigger the rendering of a complete frame
+            </summary>
+            <param name="timeMs"></param>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.Configure">
+            <summary>
+            Configure panel and scene after modifications to any buffers
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Scene">
+            <summary>
+            Gets a reference to the initial, global scene or sets it.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Rectangle">
+            <summary>
+            Gets the rectangular area which this panel occupies inside its container control or sets that rectangle
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.Supports(ILNumerics.Drawing.Capabilities)">
+            <summary>
+            [Reserved for future use]
+            </summary>
+            <param name="Capability">Capability to query</param>
+            <returns>True if this driver supports the capability requested, false otherwise</returns>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.ViewTransform">
+            <summary>
+            Get the rectangular area as fraction of the area defined by Rectangle, which is used to render the scene to. ViewTransform Matrix4.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.Driver">
+            <summary>
+            Gets the type of renderer used to render the scene or sets it. Default: OpenGL, fallback: GDI.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.RendererType">
+            <summary>
+            Gets the type of renderer used to render the scene or sets it. Default: OpenGL, fallback: GDI.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.PickPrimitiveAt(ILNumerics.Drawing.Drawable,System.Drawing.Point,System.Int64,System.Boolean)">
+            <summary>
+            Pick primitive(s) below specific screen position
+            </summary>
+            <param name="drawable">The shape to pick the primitive from</param>
+            <param name="point">Windows coordinates of the point to pick</param>
+            <param name="time">[Optional] time frame for rendering (for animations only)</param>
+            <param name="ignoreLogAxis">[Optional] true: never log() vertex data returned, even for logaritmic log axis scales. Default: false</param>
+            <returns>Interface giving access to detailed information of the primitive(s) found</returns>
+            <remarks><para><see cref="M:ILNumerics.Drawing.Panel.PickPrimitiveAt(ILNumerics.Drawing.Drawable,System.Drawing.Point,System.Int64,System.Boolean)"/> finds all primitives below the position given in <paramref name="point"/> which belong to the 
+            drawable object specified in <paramref name="drawable"/>. In difference to <see cref="M:ILNumerics.Drawing.Panel.PickAt(System.Drawing.Point,System.Int64)"/> which 
+            only finds the <b>drawable</b>, i.e. the shape or the label below the window position, <see cref="M:ILNumerics.Drawing.Panel.PickPrimitiveAt(ILNumerics.Drawing.Drawable,System.Drawing.Point,System.Int64,System.Boolean)"/> 
+            finds all primitives within that drawable. This allows the identification of individual tiles (triangles), line segments and individual 
+            points of arbitrary shapes. Detailed information is given for the primitives found, including vertex data in object and screen coordinates,
+            order of the primitives relative to the camera and interpolated position data.</para>
+            <para>If <paramref name="drawable"/> is null, a regular picking operation is performed first in order to identify the closest drawable 
+            object under <paramref name="point"/> and the primitives are picked from that afterwards.</para>
+            <para><paramref name="point"/> is expected in window (pixel) coordinates. All mouse events provide the window position in the 
+            <see cref="P:ILNumerics.Drawing.MouseEventArgs.Location"/> property. Note, that the origin (0,0) for window coordinates lays in the upper left corner 
+            of the window.</para>
+            <para>If the drawable is displayed in the context of a plot cube with <a href="axis-configuration.html#logarithmic-scales">logarithmic axis scales</a>
+            the vertex data returned are also logarithmic. Therefore, they reflect the rendered position rather than the original data specified for the object. 
+            If this is not intended, one can set the <paramref name="ignoreLogAxis"/> flag to true and the data returned in <see cref="P:ILNumerics.Drawing.IPickingResult.VerticesWorld"/>
+            will correspond to the actual data specified by the user and not be logarithmic. Note that the vertex screen data returned in 
+            <see cref="P:ILNumerics.Drawing.IPickingResult.VerticesScreen"/> will always correspond to the logarithmic representation in that context, regardless of 
+            the setting of <paramref name="ignoreLogAxis"/>.</para>
+            </remarks>
+            <example><code><![CDATA[
+            using System;
+            using System.Collections.Generic;
+            using System.ComponentModel;
+            using System.Data;
+            using System.Drawing;
+            using System.Linq;
+            using System.Text;
+            using System.Threading.Tasks;
+            using System.Windows.Forms;
+            using ILNumerics; 
+            using ILNumerics.Drawing; 
+            using ILNumerics.Drawing.Plotting;
+            
+            
+            
+            namespace WindowsFormsApplication3 {
+                
+                // Picking Example. The application creates a surface in a plot cube. It registers several event handler 
+                // demonstrating the picking of primitives and the interactive manipulation of the scene to display 
+                // the picking results. A small blue dot is moving below the mouse at interpolated positions. A larger red dot 
+                // is placed at the nearest vertex to the mouse. Hovering over the red dot displays a tool tip with the position 
+                // value of the vertex in a screen overlay.  
+                //
+                // Create a new WindowsForms application and paste the content of the following class into it. Start the application
+                // and move the mouse over the surface. Watch the values and positions of the red and blue dot change. Hover 
+                // over the red dot. A tool tip window is shown displaying the values of its position. 
+                public partial class Form1 : Form {
+                    public Form1() {
+                        InitializeComponent();
+                    }
+            
+                    // attributes: red point marking vertices, blue for interpolated value
+                    Points m_pointsRed, m_pointsBlue;
+                    // a screen object is used as tool tip label
+                    ScreenObject m_labelObj;  
+                    
+                    // this is the regular panel load event handler
+                    private void ilPanel1_Load(object sender, EventArgs e) {
+                        // setup objects
+                        m_pointsRed = new Points("MarkVertex") {
+                            Color = Color.Red,
+                            Size = 10
+                        };
+                        m_pointsBlue = new Points("MarkPosition") {
+                            Color = Color.Blue,
+                            Size = 3
+                        };
+                        // the tooltip label is placed inside an ScreenObject
+                        m_labelObj = new ScreenObject("LabelObj") {
+                            Children = { 
+                                new Label(tag: "Label") {
+                                    // centered in the screen object
+                                    Position = new Vector3(.5f,.5f,0),
+                                    Anchor = new PointF(.5f,.5f)
+                                }
+                            },
+                            // disable interactive movement of the screen object
+                            Movable = false,
+                            // displace slightly away from the mouse 
+                            Anchor = new PointF(-0.05f,-0.05f),
+                            Width = 150,
+                            Height = 30,
+                            Visible = false
+                        }; 
+                        // create some test data
+                        Array<float> C = SpecialData.sincf(20, 30, 3);
+                        C["2:5;10:14"] = 1;  // make it more interesting
+            
+                        // add objects to the scene
+                        ilPanel1.Scene.Add(new PlotCube(twoDMode: false) {
+                            new Surface(C),
+                            // dots and tool tip go into a separated  group
+                            // so we can render them on top of the surface
+                            new Group(target: RenderTarget.Screen2DFar) { 
+                                m_pointsRed, m_pointsBlue, m_labelObj
+                            }
+                        });
+                        // wire up events 
+                        ilPanel1.Scene.First<Surface>().MouseMove += ilSurface1_MouseMove;
+                        m_pointsRed.MouseEnter += m_pointsRed_MouseEnter;
+                        m_pointsRed.MouseLeave += m_pointsRed_MouseLeave;
+                    }
+            
+                    void m_pointsRed_MouseEnter(object sender, MouseEventArgs e) {
+                        // fetch reference to the tool tip label
+                        var label = m_labelObj.First<Label>(tag: "Label");
+                        if (label != null) {
+                            // display the position of the red dot in the tool tip
+                            label.Text = m_pointsRed.Positions.GetPositionAt(0).ToString();
+                            m_labelObj.Location = e.LocationF;
+                            m_labelObj.Visible = true;
+                            // always need to Configure() after changes
+                            m_labelObj.Configure();
+                            // redraw the scene
+                            ilPanel1.Refresh();
+                        }
+                    }
+                    void m_pointsRed_MouseLeave(object sender, MouseEventArgs e) {
+                        m_labelObj.Visible = false;
+                        // always need to Configure() after changes
+                        m_labelObj.Configure();
+                        // redraw the scene
+                        ilPanel1.Refresh();
+                    }
+            
+                    void ilSurface1_MouseMove(object sender, MouseEventArgs e) {
+                        // perform picking of the primitives below the cursor
+                        using (var pick = ilPanel1.PickPrimitiveAt(e.Target as Drawable, e.Location)) {
+                            
+                            // TODO: we do perform only simple checks for 'pick' containing data for triangles here. In 
+                            // a production environment, you should do more extensive checks! Otherwise, 
+                            // this functions may gets triggered while moving over points or lines of your 
+                            // scene and below code does not work! Below code expects triangles only.
+                            if (ILMath.isempty(pick.NextVertex) || pick.VerticesScreen.S[0] != 3) {
+                                return; 
+                            }
+                            try {
+                                // Move the red dot to nearest vertex. pick.NextVertex[0] gives the 
+                                // index for the closest primitive in pick.VerticesWorld (row index). 
+                                // "0:2" addresses the X,Y and Z values for the vertex in the corrresponding row. 
+                                // The third dimension '0' means: the first primtive, which will always be the 
+                                // one closest to the camera. 
+                                m_pointsRed.Positions.Update(pick.VerticesWorld[pick.NextVertex[0], "0:2", 0][":"]);
+                                // compute interpolated point: use the barycentric coordinates provided in 
+                                // Vertices["0,1;3;0"] in order to interpolate any value over the triangle 
+                                // for the picked point. 
+                                float s = pick.VerticesWorld.GetValue(0, 3);
+                                float v = pick.VerticesWorld.GetValue(1, 3);
+                                // The third barycentric coordinate is not stored. You can compute it easily 
+                                // using the following formula: 
+                                float t = 1 - s - v;
+                                // interpolate: here, we interpolate the position 
+                                Array<float> interp = pick.VerticesWorld["0;0:2;0"] * s
+                                                      + pick.VerticesWorld["1;0:2;0"] * v
+                                                      + pick.VerticesWorld["2;0:2;0"] * t;
+                                m_pointsBlue.Positions.Update(interp[":"]);
+                                Text = interp.GetValue(2).ToString();
+                                m_pointsRed.Configure();
+                                m_pointsBlue.Configure();
+                                ilPanel1.Refresh();
+                            } catch (ArgumentException) { }
+                        }
+                    }
+                }
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.GetCurrentScene(System.Int64)">
+            <summary>
+            Returns a scene which reflects the rendering result, including all local compositions and modifications
+            </summary>
+            <param name="ms">[optional] time of render frame</param>
+            <returns>scene composition as copies of local and global scene, including user interactions and auto generated shapes (ticks, camera etc.)</returns>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.PickAt(System.Drawing.Point,System.Int64)">
+            <summary>
+            Determines the ID of the shape according to a specific pixel position inside the Rectangle output area at a specific point in time
+            </summary>
+            <param name="screenCoords">pixel coords, (0,0) is at upper left corner</param>
+            <param name="timeMs">the point in time for rendering</param>
+            <returns>the id of the shape which exists at the given screen coordinates, null if no such shape exists</returns>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.LocalScene">
+            <summary>
+            Gets the scene which is only maintained by this panel and not shared between multiple drivers.
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.SceneSyncRoot">
+            <summary>
+            Gets the rendering scene which is constantly synchronized/derived with/from the (global) Scene 
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Panel.LocalSceneSyncRoot">
+            <summary>
+            Get the rendering scene which is constantly synchronized/derived with/from the LocalScene  
+            </summary>
+        </member>
+        <member name="F:ILNumerics.Drawing.Panel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.Panel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Controls.PlotPanel.#ctor">
+            <summary>
+            Create a new plot panel with an empty plot cube 
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Controls.PlotPanel.PlotCube">
+            <summary>
+            The default plot cube object for this plot panel
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.Controls.PlotPanel.Scene">
+            <summary>
+            Gets a reference to the global scene of this panel or sets it
+            </summary>
+        </member>
+        <member name="F:ILNumerics.Drawing.Controls.PlotPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.Controls.PlotPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.Controls.PlotPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ILNumerics.Drawing.OGLBuffer">
+            <summary>
+            Represents a GL buffer 
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.OGLBuffer.Deleted">
+            <summary>
+            Fired when the buffer was deleted completely
+            </summary>
+        </member>
+        <member name="E:ILNumerics.Drawing.OGLBuffer.Recreated">
+            <summary>
+            Fires when the buffer was recreated (for rewiring the buffer)
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLBuffer.GLID">
+            <summary>
+            The ID used to uniquely identify the buffer within the GL
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLBuffer.DataCount">
+            <summary>
+            Number of data columns stored in the buffer, this may differ from the number of columns actually stored in the GL storage
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLBuffer.DataCountGL">
+            <summary>
+            Number of data columns actually stored in the GL memory
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLBuffer.DataLength">
+            <summary>
+            Number of rows / elements for each datum
+            </summary>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLBuffer.SourceBuffer">
+            <summary>
+            Reference to the source buffer, this GL Buffer synchronizes with
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLBuffer.#ctor(ILNumerics.Drawing.BufferBase)">
+            <summary>
+            Create new buffer as clone of the given buffer, sharing the underlying storage
+            </summary>
+            <param name="buffer">Source buffer</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLBuffer.#ctor">
+            <summary>
+            Create a new, empty GL buffer
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLBuffer.UpdateOrReplace(ILNumerics.InArray{System.Int32})">
+            <summary>
+            updates the GL buffer with new data, expanding if necessary. Does not shrink the GL buffer!
+            </summary>
+            <param name="data">new data array, matrix with 3 or 4 rows, [0..n] columns, not null</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLBuffer.UpdateOrReplace(ILNumerics.InArray{System.Single})">
+            <summary>
+            updates the GL buffer with new data, expanding if necessary. Does not shrink the GL buffer!
+            </summary>
+            <param name="data">new data array, matrix with 3 or 4 rows, [0..n] columns, not null</param>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLDriver.ActualVersion">
+            <summary>
+            Get the actual version of the current OpenGL graphics context
+            </summary>
+            <remarks><para>The actual version may differs from the requested version if the graphics card / driver does not support the version requested. 
+            This provides an efficient way of checking the actual version and exit rendering in a failsafe, deterministic way. 
+            </para>
+            <para>Querying this property successfully requires an OpenGL context to be created and set current. Therefore, if the property is queried too early, 
+            this requirement may not be met yet. A version number of 0.0 is returned in this case.</para>
+            </remarks>
+        </member>
+        <member name="P:ILNumerics.Drawing.OGLDriver.GLViewport">
+            <summary>
+            get/set the _OpenGL_ viewport, expects rectangles origin at UPPER left corner 
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLDriver.GetGLViewport(System.Drawing.RectangleF)">
+            <summary>
+            get the _OpenGL_ viewport according to ClientSize, Rectangle and innerRect
+            </summary>
+            <param name="innerRect"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ILNumerics.Drawing.OGLLightsBuffer">
+            <summary>
+            an uniform buffer object, holds and synchronizes all light data 
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLShape.Delete">
+            <summary>
+            Delete all resources from this OGLShape - except the GL buffers (which might be shared with other shapes) 
+            </summary>
+        </member>
+        <member name="T:ILNumerics.Drawing.OGLTextureStorage">
+            <summary>
+            OpenGL implementation of TextureStorage
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLTextureStorage.MakeCurrent">
+            <summary>
+            Select this storage to be current in GL
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLTextureStorage.InitTexture">
+            <summary>
+            initialize texture sheet 
+            </summary>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLTextureStorage.Store(System.Drawing.Bitmap,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            store item in texture sheet in GL
+            </summary>
+            <param name="bmp">new item bitmap data, ARGB format</param>
+            <param name="bmpRect">rectangle used in bitmap</param>
+            <param name="texRect">rectangle specifying area to store the data into the texture sheet, 
+            integer pixels coords: range from 0...m_width|m_height (e.g. '512')</param>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLTextureStorage.Dispose(System.Boolean)">
+            <summary>
+            dispose off the texture storage's ressources
+            </summary>
+            <param name="manual"></param>
+        </member>
+        <member name="M:ILNumerics.Drawing.OGLProgram.CreateFor(ILNumerics.Drawing.OGLShape,ILNumerics.Drawing.RenderParameter)">
+            <summary>
+            Create or reuse program for a specific shape. 
+            </summary>
+            <param name="shape">the shape</param>
+            <returns>true: program was newly created, false: program was reused (no need to recreate VAO)</returns>
+        </member>
+    </members>
+</doc>
